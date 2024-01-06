@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/BG/BG\ escuro\ CL.svg);
+  --hover-color: rgb(255, 132, 0);
+  --border-color: rgb(255, 254, 255, 0.5);
+  --switch-br-url: url(assets/BG/moon.star.svg);
+  --surfece-color: rgba(255, 255, 255, 0.044);
+  --stroke-color: rgba(255, 255, 255, 0.50);
+  --border-stroke-color: rgb(155, 150, 150);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/BG/BG\ claro\ CL.svg);
+  --hover-color: rgb(255, 132, 0);
+  --border-color-light: rgb(13, 13, 13);
+  --switch-br-url: url(assets/BG/sun.svg) ;
+  --surfece-color-light: rgba(67, 66, 66, 0.474);
+  --border-stroke-color: rgb(155, 150, 150); 
+}
+
+body {
+  background: var(--bg-url) no-repeat top center/cover ;
+    
+} 
+
+body * {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+  text-decoration: none;
+    
+}
+
+#container {
+  width: 360px;
+  margin: 56px auto 0px;
+  padding: 0 20px;
+
+}
+
+/* profile*/
+
+#profile {
+  text-align: center;
+  padding: 16px;
+}
+
+#profile img {
+  width: 114px;
+}
+
+#profile p {
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--text-color);
+}
+
+/* final */
+
+/* switch */
+
+#switch {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+ #switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-br-url) no-repeat center ;
+  border: 0 ;
+  border-radius: 100%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translatey(-50%);
+
+  animation: volta .4s;
+
+ }
+
+ .light #switch button {
+   animation: vai 0.4s forwards;
+ }
+
+ #switch button:hover {
+  outline: 8px solid var(--border-stroke-color);
+
+ }
+
+ #switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background:  rgba(170, 168, 168, 0.474); ;
+  border: 1px solid var(--border-stroke-color);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  border-radius: 9999px;
+
+ }
+
+/* final */
+
+/* Lista de Links */
+ul {
+  list-style: none;
+  text-decoration: none;
+
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  padding: 24px 0;
+
+}
+
+ul li a { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  padding: 14px 21px;
+
+  background: var(--surfece-color);
+
+   border-radius: 10px;
+   border: 0.1px solid rgba(59, 53, 59, 0.5);
+
+   font-weight: 500;
+
+   backdrop-filter: blur(5px);
+   -webkit-backdrop-filter: blur(5px);
+
+   transition: background  0.5s;
+
+}
+
+ul li a:hover {
+    background: var(--hover-color);
+    border: 1.5px var(--border-color-light) ;
+
+}
+
+/* final */
+
+/* Social-links */
+#social-links {
+    display: flex;
+    justify-content: center;
+    
+    padding: 24px 0;
+    
+    font-size: 24px;
+  
+}
+
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    padding: 10px;
+
+    transition: background 0.4s;
+    border-radius:100% ;
+    
+}
+
+#social-links a:hover {
+    background: rgba(255, 132, 0, 0.846);
+    
+}
+
+/* Final */
+
+/* Footer */
+
+footer {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+
+    padding: 24px 0 ;
+    
+}
+
+
+ footer p span {
+    font-weight: 500;
+    color: rgb(255, 132, 0);
+    text-decoration: underline;
+
+ }
+
+/* Final */
+
+@keyframes vai {
+  from {
+    left:0;
+  }
+
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes volta {
+  from {
+    left: 50%;
+  }
+
+  to {
+    left: 0;
+  }
+}
